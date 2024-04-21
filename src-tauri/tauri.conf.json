@@ -15,15 +15,21 @@
       "window": {
         "maximize": true,
         "minimize": true,
-        "hide": true,
-        "startDragging": true,
-        "show": true,
         "unmaximize": true,
-        "unminimize": true
+        "unminimize": true,
+        "show": true,
+        "hide": true,
+        "close": true,
+        "startDragging": true
       },
       "shell": {
         "all": false,
         "open": true
+      },
+      "http": {
+        "all": false,
+        "request": true,
+        "scope": []
       }
     },
     "windows": [
