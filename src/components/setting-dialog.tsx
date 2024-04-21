@@ -94,6 +94,7 @@ function SettingDialog({ open, onOpenChange }: SettingDialogProps) {
             <DialogTitle>壁紙</DialogTitle>
           </DialogHeader>
           <Form {...form}>
+            <img src={url} alt="test" />
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                 control={form.control}
