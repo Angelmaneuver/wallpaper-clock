@@ -38,7 +38,7 @@
       }
     ],
     "security": {
-      "csp": "img-src *"
+      "csp": "img-src '*';"
     },
     "bundle": {
       "active": true,
