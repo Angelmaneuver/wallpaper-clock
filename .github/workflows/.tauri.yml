@@ -1,0 +1,54 @@
+name: Release CLI to the GitHub Release
+on:
+  workflow_dispatch:
+    inputs:
+      method:
+        description: |
+          Which number to increment in the semantic versioning.
+          Set 'major', 'minor' or 'patch'.
+        required: true
+
+jobs:
+  release:
+    name: Release
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check Actor
+        if: github.actor != 'Angelmaneuver'
+        run: exit 1
+
+      - name: Check Branch
+        if: github.ref != 'refs/heads/main'
+        run: exit 1
+
+      - name: Checkout Sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Bump-up Semantic Version
+        id: vertag
+        uses: kyoh86/git-vertag-action@v1
+        with:
+          # method: "major", "minor" or "patch" to update tag with semver
+          method: "${{ github.event.inputs.method }}"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Install app dependencies and build
+        run: pnpm install && pnpm build
+
+      - name: Build the app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
