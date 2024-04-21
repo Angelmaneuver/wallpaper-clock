@@ -45,3 +45,9 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: "${{ github.event.inputs.method }}"
+          releaseName: "${{ github.event.inputs.method }}"
+          releaseBody: "Version ${{ github.event.inputs.method }} release 🎉"
+          releaseDraft: true
+          prerelease: false
