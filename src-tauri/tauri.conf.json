@@ -33,7 +33,7 @@
       }
     ],
     "security": {
-      "csp": "img-src 'self' http://* https://*"
+      "csp": "img-src 'self' http://* https://*;"
     },
     "bundle": {
       "active": true,
