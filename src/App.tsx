@@ -21,10 +21,7 @@ function App() {
     <>
       <ContextMenu>
         <ContextMenuTrigger>
-          <div
-            data-tauri-drag-region
-            className="h-screen w-screen grid grid-cols-3"
-          >
+          <div data-tauri-drag-region className="w-screen grid grid-cols-3">
             <Clock className="mt-8 col-start-2" />
           </div>
         </ContextMenuTrigger>
