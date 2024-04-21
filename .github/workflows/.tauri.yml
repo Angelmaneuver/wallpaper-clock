@@ -28,10 +28,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup PNPM
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: 20
+          version: 8
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
@@ -39,7 +39,7 @@ jobs:
           toolchain: stable
 
       - name: Install app dependencies and build
-        run: npm install && npm run build
+        run: pnpm && pnpm build
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
