@@ -38,7 +38,7 @@
       }
     ],
     "security": {
-      "csp": "default-src *;"
+      "csp": null
     },
     "bundle": {
       "active": true,
