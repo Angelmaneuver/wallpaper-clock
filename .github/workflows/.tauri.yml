@@ -39,7 +39,7 @@ jobs:
           toolchain: stable
 
       - name: Install app dependencies and build
-        run: pnpm install && pnpm build
+        run: npm install && pnpm build
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
