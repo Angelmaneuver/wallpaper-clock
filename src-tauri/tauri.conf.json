@@ -52,7 +52,7 @@
         "icons/icon.ico"
       ],
       "macOS": {
-        "exceptionDomain": "*"
+        "exceptionDomain": "qnap.cosmos"
       }
     }
   }
