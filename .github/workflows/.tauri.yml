@@ -45,7 +45,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+          target: ${{ matrix.platform == 'macos-latest' && 'x86_64-apple-darwin' || '' }}
 
       - name: Install app dependencies
         run: pnpm install
