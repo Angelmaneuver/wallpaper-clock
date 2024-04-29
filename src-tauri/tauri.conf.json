@@ -25,7 +25,7 @@
       "http": {
         "all": true,
         "request": true,
-        "scope": []
+        "scope": ["http://*", "https://*"]
       },
       "shell": {
         "all": false,
