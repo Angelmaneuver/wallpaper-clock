@@ -13,14 +13,13 @@ jobs:
     name: Release
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
         include:
           - platform: 'macos-latest'
             args: '--target x86_64-apple-darwin'
           - platform: 'windows-latest'
             args: ''
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.platform }}
     permissions:
       contents: write
     steps:
